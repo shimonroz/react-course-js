@@ -13,3 +13,4 @@ console.log(findStudent(9)?.name ?? "Not found");
 
 for (const { name, grade } of students) 
   console.log(`${name}: ${grade >= 56 ? "pass" : "fail"}`);
+
