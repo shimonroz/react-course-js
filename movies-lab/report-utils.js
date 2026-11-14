@@ -6,7 +6,7 @@ export const findByTitle = (movies, title) => movies.find(movie => movie.title =
 
 export const getOscarsLine = movie => `Oscars: ${movie.awards?.oscars??0}`;
 
-export const sortByYear = movies => movies.sort((a, b) => a.year - b.year);
+export const sortByYear = movies => [...movies].sort((a, b) => a.year - b.year);
 
 export const markAsWatched = (movies, id) => 
 {
