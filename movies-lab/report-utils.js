@@ -9,11 +9,13 @@ export const getOscarsLine = movie => `Oscars: ${movie.awards?.oscars??0}`;
 export const sortByYear = movies => [...movies].sort((a, b) => a.year - b.year);
 
 export const markAsWatched = (movies, id) => 
-    {const movie = movies.map(movie => movie.id === id ? {...movie, watched: true} : movie)};
+    {const movie = movies.map(movie => movie.id === id ? {...movie, watched: true} : movie)
+     return movie;
+    };
 
 export const renameActor = (movie, index, newName) => 
 {
-  const copy = { ...movie };
-  copy.cast[index].name = newName;
+  const copy = { ...movie, cast: [...movie.cast] };
+  copy.cast[index] = {...copy.cast[index], name: newName};
   return copy;
 };
